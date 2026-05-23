@@ -158,7 +158,7 @@
                             <i class="fas fa-globe"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm">ওয়েবসাইট ভিজিট করুন - ১</h4>
+                            <h4 class="font-bold text-sm">কাজ বুঝতে ভিডিও দেখুন</h4>
                             <p class="text-xs text-pink-400 mt-0.5">+৳50 বোনাস </p>
                         </div>
                     </div>
@@ -420,7 +420,7 @@
             let todayStr = new Date().toLocaleDateString();
 
             if (taskNum === 1) {
-                const channelLink = "https://t.me/dailytaskpayment6";
+                const channelLink = "https://t.me/dailymoney96";
                 if (tg) { tg.openTelegramLink(channelLink); } else { window.open(channelLink, '_blank'); }
 
                 if (!userData.socialTask1Done) {
@@ -433,18 +433,19 @@
                     alert("আপনি অলরেডি এই টাস্কের রিওয়ার্ড নিয়ে নিয়েছেন।");
                 }
 
-            } else if (taskNum === 2) {
-                const webLink1 = "https://omg10.com/4/10844900";
-                if (tg) { tg.openLink(webLink1); } else { window.open(webLink1, '_blank'); }
+            } 
+            if (taskNum === 2) {
+                const channelLink = "https://t.me/dailytaskpayment6";
+                if (tg) { tg.openTelegramLink(channelLink); } else { window.open(channelLink, '_blank'); }
 
-                if (userData.lastTask2Date !== todayStr) {
+                if (!userData.socialTask1Done) {
                     userRef.update({
                         balance: (userData.balance || 0) + 50.00,
-                        lastTask2Date: todayStr
+                        socialTask1Done: true
                     });
-                    alert("ওয়েবসাইট ভিজিট করার জন্য ৫০ টাকা ডেইলি বোনাস যোগ করা হয়েছে!");
+                    alert("চ্যানেলে জয়েন করার জন্য ৫০ টাকা বোনাস যোগ করা হয়েছে!");
                 } else {
-                    alert("আজকের রিওয়ার্ড নেওয়া শেষ! আগামীকাল আবার বোনাস পাবেন।");
+                    alert("আপনি অলরেডি এই টাস্কের রিওয়ার্ড নিয়ে নিয়েছেন।");
                 }
 
             } else if (taskNum === 3) {
@@ -548,4 +549,4 @@
         }
     </script>
 </body>
-                </html>
+</html>
